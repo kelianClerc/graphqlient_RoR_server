@@ -23,8 +23,13 @@ module Todo
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.autoload_paths << Rails.root.join("app/graphql")
+    config.autoload_paths << Rails.root.join("app/lib")
+    config.autoload_paths << Rails.root.join("app/graphql/types")
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.log_level = :warn
   end
 end

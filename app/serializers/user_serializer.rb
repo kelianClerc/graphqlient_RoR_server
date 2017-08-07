@@ -1,0 +1,4 @@
+class UserSerializer < ActiveModel::Serializer
+  attributes :id, :name, :firstname, :age , :created_at, :updated_at, :sister_name , :description , :geo_enabled , :city, :gender , :number_of_cars , :personal_car_brand , :number_of_cats , :favorite_cat_breed, :is_validated , :lang , :pseudo, :notification_enabled , :user_picture , :user_background_image, :user_profile_url, :favorite_color , :is_protected , :bank_name, :bank_iban , :bitcoin_address, :favorite_book, :favorite_author, :favorite_icecream_flavor , :secondary_school , :favorite_dish , :height, :weight, :playing_instrument , :favorite_pokemon , :phone_number
+  has_many :actions, serializer: ActionIdSerializer
+end
