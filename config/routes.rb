@@ -11,9 +11,17 @@ Rails.application.routes.draw do
   root "graphql#test"
 
 
-  resources :users do
-    resources :actions
+  resources :users, only: [:index, :show] do
+    resources :actions, only: [:index, :show] do
+      resources :items, only: [:show, :index]
+    end
   end
+
+  resources :actions, only: [:index, :show] do
+      resources :items, only: [:index, :show]
+  end
+
+  resources :items, only: [:index, :show]
 
 
   resources :queries, via: [:post, :options]
