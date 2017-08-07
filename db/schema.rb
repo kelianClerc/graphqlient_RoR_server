@@ -33,11 +33,6 @@ ActiveRecord::Schema.define(version: 20170727092455) do
     t.index ["user_id"], name: "index_actions_on_user_id"
   end
 
-  create_table "friendships", id: false, force: :cascade do |t|
-    t.integer "left_user_id"
-    t.integer "right_user_id"
-  end
-
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.integer "duration"

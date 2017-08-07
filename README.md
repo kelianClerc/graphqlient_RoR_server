@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To setup this server :
 
-Things you may want to cover:
+Be sure that you are running a PostgresQL database named `todo_development` 
+If not do in terminal:
+```
+psql
+CREATE DATABASE todo_development;
+```
 
-* Ruby version
 
-* System dependencies
+Install all gems by running :
 
-* Configuration
+```
+bundle install
+```
 
-* Database creation
+Create database by running :
+```
+rails db:migrate
+```
 
-* Database initialization
+Generate database content by using :
+```
+rails db:seed
+```
 
-* How to run the test suite
+Run the server by using :
+```
+rails server -b 127.0.0.1 -p 3000 
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can now access your API. For instance :
+[http://localhost:3000/users](http://localhost:3000/users)
